@@ -10,7 +10,7 @@ const Hello: Component<{
   return <div>Hello {props.name}</div>
 }
 
-const [text, setText] = createSignal("")
+const [text, setText] = createSignal("22")
 const InputLine: Component<{
   hint : string
 }> = (props) => {
@@ -29,6 +29,7 @@ const App: Component = () => {
         </p>
         <Hello name={text()}/>
         <InputLine hint={text()}/>
+        <strong>{text()}</strong>
         <a
           class={styles.link}
           href="https://github.com/solidjs/solid"
