@@ -1,21 +1,16 @@
-import type { Component } from 'solid-js';
-import { createSignal } from "solid-js";
+import { Component } from 'solid-js';
 
 import logo from './logo.svg';
 import styles from './App.module.css';
+
+
+import { CountingComponent } from "./Components/Counter"
+import { TodoList } from "./Components/Simple Todos"
 
 const Hello: Component<{
   name : string
 }> = (props) => {
   return <div>Hello {props.name}</div>
-}
-
-const [text, setText] = createSignal("22")
-const InputLine: Component<{
-  hint : string
-}> = (props) => {
-  setText(props.hint)
-  return <input value={props.hint} placeholder="input here"/>
 }
 
 const App: Component = () => {
@@ -27,9 +22,9 @@ const App: Component = () => {
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
-        <Hello name={text()}/>
-        <InputLine hint={text()}/>
-        <strong>{text()}</strong>
+        
+        <TodoList/>
+        
         <a
           class={styles.link}
           href="https://github.com/solidjs/solid"
